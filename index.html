@@ -12,9 +12,63 @@
   <body>
     <header class="navbar"></header>
 
-    <main></main>
+    <h1>Contact Management</h1>
+
+    <main>
+      <form id="contact-form">
+        <input type="hidden" id="contact-id" />
+        <input
+          type="text"
+          id="name"
+          placeholder="Name"
+          required
+          autocomplete="on"
+        />
+        <input
+          type="email"
+          id="email"
+          placeholder="Email"
+          required
+          autocomplete="on"
+        />
+        <input type="tel" id="phone" placeholder="Telepon" autocomplete="on" />
+        <input
+          type="text"
+          id="company"
+          placeholder="Perusahaan"
+          autocomplete="on"
+        />
+        <input
+          type="text"
+          id="jobTitle"
+          placeholder="Jabatan"
+          autocomplete="on"
+        />
+        <input
+          type="text"
+          id="address"
+          placeholder="Alamat"
+          autocomplete="on"
+        />
+        <section class="form-section-additional">
+          <label for="labels">Label:</label>
+          <select id="contact-label" class="form-labels"></select>
+          <label for="notes">Notes:</label>
+          <textarea id="notes" placeholder="Notes"></textarea>
+        </section>
+        <button type="submit">Save</button>
+        <button type="button" onclick="window.location.hash='#/'">
+          Cancel
+        </button>
+      </form>
+
+      <section class="contact-list">
+        <h2>Daftar Kontak</h2>
+        <ul id="contact-list"></ul>
+    </main>
 
     <footer role="contentinfo" class="footer"></footer>
+    <script src="/assets/scripts/storage.js"></script>
     <script src="/assets/scripts/index.js"></script>
   </body>
 </html>

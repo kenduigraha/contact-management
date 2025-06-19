@@ -1,0 +1,31 @@
+body {
+  font-family: sans-serif;
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+form input, form button, #search {
+  margin: 10px 0;
+  padding: 8px;
+  width: 100%;
+}
+
+.form-labels {
+  height: 35px;
+  width: 100px;
+}
+
+.form-section-additional {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  row-gap: 10px;
+}
+
+#contact-list li {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  position: relative;
+}
