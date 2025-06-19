@@ -45,6 +45,25 @@ function renderContacts(filter = '') {
     });
 }
 
+function editContact(id) {
+  const contact = contacts.find(c => c.id === id);
+  const contactLabelsSelect = document.getElementById('contact-label');
+  if (!contact) return;
+
+  document.getElementById('contact-id').value = contact.id;
+  document.getElementById('name').value = contact.name;
+  document.getElementById('phone').value = contact.phone;
+  document.getElementById('email').value = contact.email;
+  document.getElementById('address').value = contact.address;
+  document.getElementById('company').value = contact.company;
+  document.getElementById('jobTitle').value = contact.jobTitle;
+  document.getElementById('notes').value = contact.notes;
+
+  contactLabelsSelect.querySelectorAll('option').forEach(opt => {
+    opt.selected = contact.label.includes(opt.value);
+  });
+}
+
 function deleteContact(id) {
   const searchInput = document.getElementById('search');
   contacts = contacts.filter(c => c.id !== id);

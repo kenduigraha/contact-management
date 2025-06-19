@@ -21,7 +21,7 @@ if (contacts.length === 0) {
     notes: "Catatan tambahan",
     company: "Perusahaan",
     jobTitle: "Jabatan",
-    label: "Family"
+    label: "Work"
   }];
   localStorage.setItem('contacts', JSON.stringify(contacts));
 }
