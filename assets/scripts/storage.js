@@ -1,6 +1,3 @@
-localStorage.removeItem('labels');
-localStorage.removeItem('contacts');
-
 let labels = JSON.parse(localStorage.getItem('labels')) || [];
 let contacts = JSON.parse(localStorage.getItem('contacts')) || [];
 
