@@ -46,6 +46,7 @@ function renderContacts(filter = '') {
 }
 
 function deleteContact(id) {
+  const searchInput = document.getElementById('search');
   contacts = contacts.filter(c => c.id !== id);
   localStorage.setItem('contacts', JSON.stringify(contacts));
   renderContacts(searchInput.value);
