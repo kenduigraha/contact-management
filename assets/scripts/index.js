@@ -38,6 +38,7 @@ function renderContacts(filter = '') {
         ${contact.company} - ${contact.jobTitle}<br>
         ${contact.address}<br>
         <small>${contact.notes}</small><br>
+        <p>${contact.label}</p>
         <button onclick="editContact('${contact.id}')">Edit</button>
         <button onclick="deleteContact('${contact.id}')">Hapus</button>
       `;
