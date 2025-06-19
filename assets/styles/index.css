@@ -29,3 +29,7 @@ form input, form button, #search {
   border: 1px solid #ddd;
   position: relative;
 }
+
+#contact-cancel {
+  visibility: hidden;
+}

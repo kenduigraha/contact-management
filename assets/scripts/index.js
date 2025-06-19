@@ -60,6 +60,12 @@ function editContact(id) {
   contactLabelsSelect.querySelectorAll('option').forEach(opt => {
     opt.selected = contact.label.includes(opt.value);
   });
+
+  // empty search input
+  document.getElementById('search').value = '';
+
+  // show cancel button
+  document.getElementById("contact-cancel").style.visibility = 'visible';
 }
 
 function deleteContact(id) {
@@ -109,6 +115,22 @@ function doSearchContact() {
     renderContacts(this.value);
   });
 }
+
+const cancelFormButton = document.getElementById('contact-cancel');
+
+cancelFormButton.addEventListener('click', function () {
+  console.log('cancel click');
+
+  document.getElementById('contact-id').value = '';
+  document.getElementById('name').value = '';
+  document.getElementById('phone').value = '';
+  document.getElementById('email').value = '';
+  document.getElementById('address').value = '';
+  document.getElementById('company').value = '';
+  document.getElementById('jobTitle').value = '';
+  document.getElementById('notes').value = '';
+  document.getElementById('contact-label').value = 'Family';
+});
 
 renderLabelOptions([]);
 renderContacts();
