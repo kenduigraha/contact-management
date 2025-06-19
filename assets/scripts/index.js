@@ -76,7 +76,7 @@ const form = document.getElementById('contact-form');
 form.addEventListener('submit', function (e) {
   e.preventDefault();
 
-  const id = `uuid-${Date.now()}`;
+  const id = document.getElementById('contact-id').value || `uuid-${Date.now()}`;
   const name = document.getElementById('name').value.trim();
   const phone = document.getElementById('phone').value.trim();
   const email = document.getElementById('email').value.trim();
