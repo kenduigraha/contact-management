@@ -2,16 +2,13 @@ function renderLabelOptions(selectedLabels = []) {
   const select = document.getElementById('contact-label');
   if (!select) return;
 
-  // Kosongkan dulu
   select.innerHTML = '';
 
-  // Tambahkan setiap label sebagai <option>
   labels.forEach(label => {
     const option = document.createElement('option');
     option.value = label;
     option.textContent = label;
 
-    // Tandai sebagai selected jika sudah dipilih
     if (selectedLabels.includes(label)) {
       option.selected = true;
     }
@@ -106,6 +103,13 @@ form.addEventListener('submit', function (e) {
   renderContacts();
 });
 
+function doSearchContact() {
+  const searchInput = document.getElementById('search');
+  searchInput.addEventListener('input', function () {
+    renderContacts(this.value);
+  });
+}
 
 renderLabelOptions([]);
 renderContacts();
+doSearchContact();
