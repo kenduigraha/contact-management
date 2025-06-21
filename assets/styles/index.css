@@ -23,6 +23,10 @@ form input, form button, #search {
   row-gap: 10px;
 }
 
+.form-section-additional textarea#notes {
+  height: 100px;
+}
+
 #contact-list li {
   margin: 10px 0;
   padding: 10px;

@@ -12,6 +12,7 @@ if (contacts.length === 0) {
   contacts = [{
     id: "uuid", // unique ID
     name: "[SEED] Nama Lengkap",
+    birthdate: "1970/01/01",
     phone: "08123456789",
     email: "nama@email.com",
     address: "Alamat rumah/kantor",

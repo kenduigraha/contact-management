@@ -29,8 +29,10 @@ function renderContacts(filter = '') {
   filteredContacts
     .forEach(contact => {
       const li = document.createElement('li');
+      const birthday = new Date(contact.birthdate).toDateString();
       li.innerHTML = `
         <strong>${contact.name}</strong><br>
+        ${birthday}<br>
         ${contact.phone} - ${contact.email}<br>
         ${contact.company} - ${contact.jobTitle}<br>
         ${contact.address}<br>
@@ -50,6 +52,7 @@ function editContact(id) {
 
   document.getElementById('contact-id').value = contact.id;
   document.getElementById('name').value = contact.name;
+  document.getElementById('birthdate').value = contact.birthdate;
   document.getElementById('phone').value = contact.phone;
   document.getElementById('email').value = contact.email;
   document.getElementById('address').value = contact.address;
@@ -82,6 +85,7 @@ form.addEventListener('submit', function (e) {
 
   const id = document.getElementById('contact-id').value || `uuid-${Date.now()}`;
   const name = document.getElementById('name').value.trim();
+  const birthdate = document.getElementById('birthdate').value.trim();
   const phone = document.getElementById('phone').value.trim();
   const email = document.getElementById('email').value.trim();
   const address = document.getElementById('address').value.trim();
@@ -92,7 +96,7 @@ form.addEventListener('submit', function (e) {
 
   const existingIndex = contacts.findIndex(c => c.id === id);
 
-  const newContact = { id, name, phone, email, address, company, jobTitle, notes, label };
+  const newContact = { id, name, birthdate, phone, email, address, company, jobTitle, notes, label };
   console.log('newContact: ', newContact)
 
   // for update data
